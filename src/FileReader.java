@@ -18,7 +18,7 @@ public class FileReader {
                 continue;
             }
             String[] info = line.split(Pattern.quote("|"));
-            persons.add(new Person(info[0].trim(), Integer.parseInt(info[1].trim()), Double.parseDouble(info[2].trim())));
+            persons.add(new Person(info[0].trim(), Double.parseDouble(info[1].trim()), Double.parseDouble(info[2].trim())));
         }
 
         return persons;

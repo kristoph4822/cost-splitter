@@ -8,16 +8,20 @@ public class Main {
         if (args.length == 0)
             throw new IllegalArgumentException("No argument was given.");
 
-        ArrayList<Person> persons = null;
+        DebtCalculator dc = null;
 
         try {
-            persons = FileReader.readPersonsFromFile(args[0]);
+            dc = new DebtCalculator(FileReader.readPersonsFromFile(args[0]));
         } catch (IOException e) {
             System.out.println("Unable to open given file.");
             System.exit(-1);
         }
-        for (Person p : persons)
-            System.out.println(p.getName());
+
+        dc.resolveDebt();
+        for(Debt d: dc.getDebts()){
+            System.out.println(d.toString());
+        }
+
     }
 
 
