@@ -5,17 +5,12 @@ import java.util.regex.Pattern;
 
 public class FileReader {
 
-    private final String FILE_FOLDER = "src/files/";
-    private final String FilePath;
+    private static final String FILE_FOLDER = "src/files/";
 
-    public FileReader(String filePath) {
-        FilePath = filePath;
-    }
-
-    public ArrayList<Person> readPersonsFromFile() throws IOException {
+    public static ArrayList<Person> readPersonsFromFile(String filePath) throws IOException {
 
         ArrayList<Person> persons = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new java.io.FileReader(FILE_FOLDER + FilePath));
+        BufferedReader br = new BufferedReader(new java.io.FileReader(FILE_FOLDER + filePath));
         String line;
 
         while ((line = br.readLine()) != null) {
@@ -23,7 +18,7 @@ public class FileReader {
                 continue;
             }
             String[] info = line.split(Pattern.quote("|"));
-            persons.add(new Person(info[0], Integer.parseInt(info[1]), Double.parseDouble(info[2])));
+            persons.add(new Person(info[0].trim(), Integer.parseInt(info[1].trim()), Double.parseDouble(info[2].trim())));
         }
 
         return persons;
