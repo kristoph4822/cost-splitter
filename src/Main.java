@@ -1,12 +1,13 @@
 import java.io.IOException;
-import java.util.ArrayList;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class Main {
 
     public static void main(String[] args){
 
-        if (args.length == 0)
-            throw new IllegalArgumentException("No argument was given.");
+        if (args.length < 2)
+            throw new IllegalArgumentException("Wrong arguments.\n 1st argument is text file, 2nd is choice of algorithm (1 or 2).");
 
         DebtCalculator dc = null;
 
@@ -17,10 +18,14 @@ public class Main {
             System.exit(-1);
         }
 
-        dc.resolveDebt();
-        for(Debt d: dc.getDebts()){
-            System.out.println(d.toString());
-        }
+        dc.resolveDebt(Integer.parseInt(args[1]));
+
+        NumberFormat f = new DecimalFormat("#0.00");
+        System.out.println("Sum: " + f.format(dc.sum) + " " + Debt.CURRENCY);
+        System.out.println("Amount each person (with ratio 1) has to pay: " + f.format(dc.x)+ " " + Debt.CURRENCY);
+        System.out.println("----------------------------");
+
+        dc.printDebts();
 
     }
 

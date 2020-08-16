@@ -14,11 +14,14 @@ public class FileReader {
         String line;
 
         while ((line = br.readLine()) != null) {
-            if(line.charAt(0) == '#'){      //lines starting with '#' are ignored
+            if(line.isEmpty() || line.charAt(0) == '#'){      //lines starting with '#' are ignored
                 continue;
             }
+
             String[] info = line.split(Pattern.quote("|"));
             persons.add(new Person(info[0].trim(), Double.parseDouble(info[1].trim()), Double.parseDouble(info[2].trim())));
+
+
         }
 
         return persons;
