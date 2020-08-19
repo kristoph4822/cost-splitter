@@ -1,5 +1,5 @@
 # Debt Resolver
-Console app to resolve debt within group.
+Console app for resolving debt within group.
 
 Two algorithms, which can be chosen with run arguments. First one resolve debt separetly between each person (like standard Splitwise). Second one reduces number of transactions between **n** persons to **n-1** (kind of like Splitwise "simplify debt" feature).
 
