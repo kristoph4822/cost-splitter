@@ -49,4 +49,9 @@ public class Person {
             return x;
         }
     };
+
+    @Override
+    public String toString(){
+        return name + " | " + expense + " | " + ratio;
+    }
 }

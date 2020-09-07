@@ -1,13 +1,13 @@
-# Imię | Wkład | Waga
-Krzysztof | 3479| 1
-Maria | 1370 | 1
-Jeremi | 3183 | 1
+# Name | Expense | Weight
+Krzysztof | 3639| 1
+Maria | -930 | 1
+Jeremi | 2272 | 1
 Maciek | 1400 | 1
 Stasiek | 340 | 1
-Wawrzyn | 0 | 1
-#Mati | 0 | 1
-#Staroń | 0 | 0.25
+Wawrzyn | 372 | 1
+Mati | 1156.34 | 1
+Staroń | 0 | 0.25
 
-# Jeremi -1181 ze zrzutki
-# Maria - 2300 ze sprzedaży
-# Wawrzyn -? od dziadka
+# Jeremi 3183 + 270 - 1181 zrzutka
+# Maria 1370 - 2300 sprzedaż tratwy
+# Wawrzyn 1372 - 1000 dziadek

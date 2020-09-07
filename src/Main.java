@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -27,6 +28,11 @@ public class Main {
 
         dc.printDebts();
 
+        JFrame jf = new JFrame("Debt Resolver");
+        jf.setContentPane(new gui().mainPanel);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.pack();
+        jf.setVisible(true);
     }
 
 

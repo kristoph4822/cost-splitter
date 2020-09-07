@@ -1,0 +1,5 @@
+Jeremi | 180 | 0.7
+Maciuś | 0 | 0.7
+Maria | 7 | 0.7
+Stasiek | 120 | 1
+Kris | 208 | 1
