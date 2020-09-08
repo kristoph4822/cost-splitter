@@ -32,6 +32,7 @@ public class DebtCalculator {
         }
     }
 
+    // Optimized algorithm for minimazing n of transactions
     private void resolveDebt1(){ //zależnie która kwota jest najmniejsza wybieramy jedną z 3 opcji
         Person first;
         Person last;
@@ -57,6 +58,7 @@ public class DebtCalculator {
         }
     }
 
+    // Standard algorithm
     private void resolveDebt2() {
         this.dt = new DebtTable(persons);
         for (Person p1: persons) {
@@ -95,9 +97,13 @@ public class DebtCalculator {
         return ratio;
     }
 
-    public void printDebts() {
+    public String printDebts() {
+        StringBuilder sb = new StringBuilder();
         for(Debt d: debts){
-            System.out.println(d.toString());
+            sb.append(d.toString());
+            sb.append("\n");
         }
+        return sb.toString();
     }
+
 }

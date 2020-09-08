@@ -13,7 +13,7 @@ public class gui {
     private JTextArea personsTextArea;
     private JButton resolveButton;
     private JRadioButton simplifyDebtsRadioButton;
-    private JTextArea textArea1;
+    private JTextArea debtsTextArea;
 
 
     public gui() {
@@ -26,6 +26,19 @@ public class gui {
                 expenseTextField.setText("");
                 ratioTextField.setText("");
             }
+        });
+        resolveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DebtCalculator dc = new DebtCalculator(persons);
+                if(simplifyDebtsRadioButton.isSelected())
+                    dc.resolveDebt(1);
+                else
+                    dc.resolveDebt(2);
+
+                debtsTextArea.append(dc.printDebts());
+            }
+
         });
     }
 }

@@ -3,8 +3,6 @@ import java.text.NumberFormat;
 
 public class Debt {
 
-    public static final String CURRENCY = "PLN";
-
     private String reciver;
     private String giver;
     private double amount;
@@ -19,7 +17,7 @@ public class Debt {
     public String toString(){
 
         NumberFormat f = new DecimalFormat("#0.00");
-        return this.giver + " owes " + this.reciver + " " + f.format(this.amount) + " " + CURRENCY;
+        return this.giver + " owes " + this.reciver + " " + f.format(this.amount);
     }
 
 }
