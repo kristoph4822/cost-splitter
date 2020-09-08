@@ -44,15 +44,19 @@ public class DebtCalculator {
 
             // wyrównujemy najgorszego
             if(first.getBalance() > lastAbsBalance) {
-                debts.add(new Debt(first.getName(), last.getName(), lastAbsBalance));
-                first.addToBalance(-lastAbsBalance);
+                if(lastAbsBalance != 0){
+                    debts.add(new Debt(first.getName(), last.getName(), lastAbsBalance));
+                    first.addToBalance(-lastAbsBalance);
+                }
                 persons.remove(last);
             }
 
             //wyrównujemy najlepszego
             else {
-                debts.add(new Debt(first.getName(), last.getName(), first.getBalance()));
-                last.addToBalance(first.getBalance());
+                if(first.getBalance() != 0){
+                    debts.add(new Debt(first.getName(), last.getName(), first.getBalance()));
+                    last.addToBalance(first.getBalance());
+                }
                 persons.remove(first);
             }
         }
